@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/OrleansSample.Client/bin
+/OrleansSample.Client/obj
+/OrleansSample.Grain/bin
+/OrleansSample.Grain/obj
+/OrleansSample.Host/bin
+/OrleansSample.Host/obj
+/OrleansSample.IGrain/bin
+/OrleansSample.IGrain/obj
+/.vs/OrleansSample
