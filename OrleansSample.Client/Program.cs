@@ -57,21 +57,24 @@ namespace OrleansSample.Client
 
         private static async Task DoClientWork(IClusterClient client)
         {
+
             //从客户端调用Grain的示例
             var friend = client.GetGrain<IHello>(1);
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
-            int count = 10000;
-            for (int i = 0; i < count; i++)
-            {
-                //var response = await friend.SayHello("Good morning, HelloGrain!");
-                //Console.WriteLine($"\n\n{response}\n\n");
-                var response = await friend.IncriseAge();
-                //Console.WriteLine($"{response}\n");
+            var response = await friend.SayHello("Good morning, HelloGrain!");
+            Console.WriteLine($"\n\n{response}\n\n");
+            //Stopwatch sw = new Stopwatch();
+            //sw.Start();
+            //int count = 10000;
+            //for (int i = 0; i < count; i++)
+            //{
+            ////var response = await friend.SayHello("Good morning, HelloGrain!");
+            ////Console.WriteLine($"\n\n{response}\n\n");
+            //    var response = await friend.IncriseAge();
+            //    //Console.WriteLine($"{response}\n");
 
-            }
-            sw.Stop();
-            Console.WriteLine($"total:{sw.ElapsedMilliseconds},avg:{(float)sw.ElapsedMilliseconds / count}");
+            //}
+            //sw.Stop();
+            //Console.WriteLine($"total:{sw.ElapsedMilliseconds},avg:{(float)sw.ElapsedMilliseconds / count}");
         }
 
         //        尝试运行客户端时发生异常: Cannot find generated GrainReference class for interface 'OrleansSample.IGrain.IHello'
